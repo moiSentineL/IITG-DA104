@@ -4,3 +4,15 @@
 // and print the characters (use putchar()).
 
 // The program should halt when the user enters EOF.
+
+int main(void) {
+    char c;
+
+    while ((c = getchar()) != EOF) {
+
+        putchar(c);
+  }
+
+
+    return 0;
+}

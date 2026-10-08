@@ -10,3 +10,51 @@
 // An Armstrong number is a positive integer that equals the sum of its own
 // digits, each raised to the power of the total number of digits in the number.
 // For example, 153 = 1^3 + 5^3 + 3^3 , 1634= 1⁴ + 6⁴ + 3⁴ + 4⁴ .
+
+typedef unsigned int pos; // to take positive integer.
+
+int armstrong(pos n) {
+    pos i, n_og, sum = 0;
+
+    n_og = n; // otherwise, it gets lost.
+
+    while (n != 0) {
+
+        i = n%10;
+        n /= 10;
+
+        // classic code for separating digits!
+
+        sum += i*i*i;
+    }
+
+    return (sum == n_og) ? 1:0;
+}
+
+int prime(pos n) {
+
+    int i = 2;
+
+    while (i <= n) {
+      if (n % i == 0)
+          break;
+      i++;
+
+    }
+
+  if (i == n)
+      return 1;
+  else
+      return 0;
+
+}
+
+int main(void) {
+    pos n;
+
+    scanf("%d", &n);
+    printf("%s", (armstrong(n) && prime(n)) ? "Yes":"No");
+
+    return 0;
+
+}
